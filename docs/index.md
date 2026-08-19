@@ -1,8 +1,24 @@
-# Welcome
-### Recent Highlights
-* **Simplicity:** This blog is powered by Markdown and VitePress.
-* **Speed:** Hosted on GitHub Pages with zero server-side overhead.
-* **Dark Mode:** Enabled by default for a clean, developer-friendly look.
+# The Title of Your Article
 
-### Read My Posts
-* [My First Post](/posts/testpost1)
+This is the introductory paragraph of your article. It sits outside any collapsible sections, just like the intro text on a Wikipedia page.
+
+<figure class="wiki-img">
+  <img src="https://via.placeholder.com/300" alt="Placeholder image">
+  <figcaption>This is the caption that will appear under your image.</figcaption>
+</figure>
+
+<!-- Add the 'open' attribute so it is visible by default on desktop -->
+<details class="wiki-section" open>
+  <summary><h2>First Main Section</h2></summary>
+  
+  This text is inside the accordion. 
+  
+  * On a desktop, this looks like a standard H2 and paragraph.
+  * On a phone, the H2 becomes a clickable header that can collapse this text!
+</details>
+
+<details class="wiki-section" open>
+  <summary><h2>Second Main Section</h2></summary>
+  
+  You can continue writing your article here, adding as many of these `<details>` blocks as you need for your H2 sections.
+</details>
