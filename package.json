@@ -1,15 +1,11 @@
 {
-  "name": "personal-knowledge-wiki",
-  "version": "1.0.0",
-  "private": true,
-  "type": "module",
+  "name": "site",
   "scripts": {
-    "build": "node src/build.mjs",
-    "dev": "node src/build.mjs && npx serve _site"
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
-  "dependencies": {
-    "markdown-it": "^14.1.0",
-    "markdown-it-footnote": "^4.0.0",
-    "serve": "^14.2.4"
+  "devDependencies": {
+    "vitepress": "latest"
   }
 }
