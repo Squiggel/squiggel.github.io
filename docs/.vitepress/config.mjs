@@ -14,7 +14,7 @@ export default defineConfig({
     config: (md) => {
       md.use(wikilinks({ 
         makeAllLinksAbsolute: true,
-        uriSuffix: '' // This stops the plugin from appending .html
+        uriSuffix: '.md' // This stops the plugin from appending .html
       }))
     }
   }
