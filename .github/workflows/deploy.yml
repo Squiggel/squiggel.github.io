@@ -36,6 +36,7 @@ jobs:
         run: npm ci
 
       - name: Configure GitHub Pages
+        id: pages
         uses: actions/configure-pages@v5
 
       - name: Build site
@@ -47,9 +48,6 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./_site
-
-    outputs:
-      base_path: ${{ steps.pages.outputs.base_path }}
 
   deploy:
     needs: build
