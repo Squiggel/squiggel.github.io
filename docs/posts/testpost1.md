@@ -7,18 +7,13 @@ This is the introductory paragraph of your article. It sits outside any collapsi
   <figcaption>This is the caption that will appear under your image.</figcaption>
 </figure>
 
-<!-- Add the 'open' attribute so it is visible by default on desktop -->
-<details class="wiki-section" open>
-  <summary><h2>First Main Section</h2></summary>
-  
-  This text is inside the accordion. 
-  
-  * On a desktop, this looks like a standard H2 and paragraph.
-  * On a phone, the H2 becomes a clickable header that can collapse this text!
-</details>
+## First Main Section
 
-<details class="wiki-section" open>
-  <summary><h2>Second Main Section</h2></summary>
+This text is inside the accordion. 
+
+* On a desktop, this looks like a standard H2 and paragraph.
+* On a phone, the H2 becomes a clickable header that can collapse this text!
+
+## Second Main Section
   
-  You can continue writing your article here, adding as many of these `<details>` blocks as you need for your H2 sections.
-</details>
+You can continue writing your article here, adding as many of these `<details>` blocks as you need for your H2 sections.
