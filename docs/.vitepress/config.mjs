@@ -1,24 +1,19 @@
+// .vitepress/config.mjs
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: "Untitled Site",
-  description: "Markdown Driven Blog",
-  base: '', 
+  title: "My Blog",
+  description: "A VitePress Site",
   themeConfig: {
-    nav: [
-      { text: 'Home', link: '' },
-    ],
+    // This defines the sidebar navigation
     sidebar: [
       {
-        text: 'Navigation',
-        items: [
-          { text: 'Home', link: '' }
-        ]
-      },
-      {
         text: 'Articles',
-        items: getPosts() 
+        items: [
+          { text: 'My First Post', link: '/posts/testpost1' }
+          // Add new posts here as you create them!
+        ]
       }
-    ],
-  },
+    ]
+  }
 })
