@@ -9,12 +9,15 @@ export default defineConfig({
     outline: { level: 'deep', label: 'Contents' }
   },
   
-  // Add this new markdown block
   markdown: {
     config: (md) => {
       md.use(wikilinks({ 
+        baseURL: '/posts/', // Automatically prepends /posts/ to all your wikilinks
         makeAllLinksAbsolute: true,
-        uriSuffix: '.md' // This stops the plugin from appending .html
+        uriSuffix: '',
+        postProcessPageName: (pageName) => {
+          return pageName.trim().replace(/\.md$/, '')
+        }
       }))
     }
   }
