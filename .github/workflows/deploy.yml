@@ -1,39 +1,60 @@
 name: Deploy VitePress site to Pages
 
 on:
+  # Runs on pushes targeting the default branch
   push:
-    branches: [main]
+    branches: [main] # Update this to 'master' if that is your default branch
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
+  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required for VitePress lastUpdated feature
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24 # Explicitly targeting Node.js 24 to fix the warning
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
       - name: Install dependencies
-        run: npm install
+        run: npm install # Standard install command
+
       - name: Build with VitePress
-        run: npm run docs:build
+        # Assuming your package.json has a "docs:build" script
+        run: npm run docs:build 
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist
+          # Based on your squiggel.github.io_explode.txt structure, the docs are in a docs folder.
+          path: docs/.vitepress/dist 
 
+  # Deployment job
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
+    name: Deploy
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
