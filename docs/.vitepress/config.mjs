@@ -12,8 +12,10 @@ export default defineConfig({
   // Add this new markdown block
   markdown: {
     config: (md) => {
-      // Configured to use the "|" as the alias divider
-      md.use(wikilinks({ makeAllLinksAbsolute: true }))
+      md.use(wikilinks({ 
+        makeAllLinksAbsolute: true,
+        uriSuffix: '' // This stops the plugin from appending .html
+      }))
     }
   }
 })
