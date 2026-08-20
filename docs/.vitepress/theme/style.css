@@ -140,3 +140,7 @@
   height: 32px;
   width: auto;
 }
+
+.VPNavBarMenu {
+  display: none;
+}
