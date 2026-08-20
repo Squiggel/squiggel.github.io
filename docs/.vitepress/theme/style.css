@@ -31,27 +31,3 @@
     box-sizing: border-box;
   }
 }
-
-/* --- Mobile Concertina (Accordion) Headings --- */
-/* Desktop: Hide the arrow and disable clicking so it looks like a normal page */
-@media (min-width: 769px) {
-  .wiki-section > summary {
-    pointer-events: none;
-    list-style: none; /* Hides the default HTML arrow */
-  }
-  .wiki-section > summary::-webkit-details-marker {
-    display: none; /* Hides arrow in older WebKit browsers */
-  }
-}
-
-/* Mobile: Style the summary to look like a clickable header */
-@media (max-width: 768px) {
-  .wiki-section > summary {
-    cursor: pointer;
-    list-style: none; /* Remove standard arrow to use custom styles if desired */
-    border-bottom: 1px solid var(--vp-c-divider);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  /* Optional: Add a custom plus/minus or arrow indicator via CSS pseudo-elements here */
-}
