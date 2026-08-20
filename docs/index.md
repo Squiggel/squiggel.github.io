@@ -4,4 +4,4 @@
 
 ### Featured articles
 
-- [[testpost1]]
+- [[template-article.md]]
