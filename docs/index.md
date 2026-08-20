@@ -2,6 +2,6 @@
 
 **Some things worth knowing, with a little breadth and a little depth.**
 
-## Featured articles
+### Featured articles
 
 - [[testpost1]]
