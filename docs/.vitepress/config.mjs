@@ -4,10 +4,9 @@ import wikilinks from 'markdown-it-wikilinks'
 export default defineConfig({
   title: "Know It All",
   themeConfig: {
-    logo: '/images/logo.svg',
     siteTitle: false,
     logo: '/images/logo.svg',
-    appearance: false,
+    appearance: 'light',
     docFooter: { prev: false, next: false },
     outline: { level: 'deep', label: 'Contents' }
   },
