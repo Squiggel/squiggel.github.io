@@ -87,4 +87,13 @@
     display: none;
   }
 }
+/* hide hamberger */
+@media (max-width: 768px) {
+  .VPNavBarMenu {
+    display: none !important;
+  }
 
+  .VPNavBarAppearance {
+    display: none !important;
+  }
+}
