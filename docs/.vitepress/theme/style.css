@@ -149,3 +149,7 @@
 .VPNavBarMenuButton {
   display: none !important;
 }
+
+.VPNavBarHamburger {
+  display: none !important;
+}
