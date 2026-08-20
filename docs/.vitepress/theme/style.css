@@ -3,8 +3,7 @@
   display: none !important;
 }
 
-/* --- Wikipedia-Style Image Infobox --- */
-/* Desktop: Right-aligned box */
+/* Wikipedia-style image infobox */
 .wiki-img {
   float: right;
   width: 300px;
@@ -13,6 +12,7 @@
   border: 1px solid var(--vp-c-divider);
   background-color: var(--vp-c-bg-soft);
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .wiki-img figcaption {
@@ -22,12 +22,16 @@
   color: var(--vp-c-text-2);
 }
 
-/* Mobile: Inline and full-width */
+/* Section headings always begin below the image */
+.vp-doc h2 {
+  clear: both;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .wiki-img {
     float: none;
     width: 100%;
     margin: 1.5rem 0;
-    box-sizing: border-box;
   }
 }
