@@ -5,7 +5,7 @@ export default defineConfig({
   title: "Know It All",
   appearance: 'light',
   themeConfig: {
-    siteTitle: false,
+    siteTitle: true,
     logo: '/images/logo.svg',
     nav: [],
     docFooter: { prev: false, next: false },

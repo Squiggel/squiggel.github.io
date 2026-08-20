@@ -162,3 +162,14 @@
 .VPNavBarHamburger {
   display: none !important;
 }
+
+.VPNavBarTitle .logo,
+.VPNavBarTitle img {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.VPNavBar {
+  border-bottom: none !important;
+}
