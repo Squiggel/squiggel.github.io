@@ -35,3 +35,51 @@
     margin: 1.5rem 0;
   }
 }
+
+
+/* H2 starts below the Wikipedia-style image */
+.vp-doc h2 {
+  clear: both;
+}
+
+
+/* =========================================
+   Mobile H2 accordions
+   ========================================= */
+
+.mobile-accordion-heading {
+  cursor: pointer;
+  position: relative;
+  padding-right: 2rem;
+}
+
+.mobile-accordion-heading::after {
+  content: '▾';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  font-size: 1rem;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease;
+}
+
+.mobile-accordion-heading.is-collapsed::after {
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.mobile-accordion-heading.is-open::after {
+  transform: translateY(-50%) rotate(0deg);
+}
+
+
+/* Desktop: normal H2 */
+@media (min-width: 769px) {
+  .mobile-accordion-heading {
+    cursor: default;
+  }
+
+  .mobile-accordion-heading::after {
+    display: none;
+  }
+}
+
