@@ -1,4 +1,4 @@
-<img src="images/sitename_typographic.svg" alt="site name typography">
+![Logo](../images/sitename_typographic.svg)
 
 ### Featured articles
 
