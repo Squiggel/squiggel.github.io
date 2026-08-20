@@ -4,6 +4,11 @@ import './style.css'
 export default {
   extends: DefaultTheme,
 
+  if (typeof document !== 'undefined') {
+      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.add('light')
+    }
+
   enhanceApp({ router }) {
     const setupMobileAccordions = () => {
       if (window.innerWidth > 768) return
