@@ -1,14 +1,28 @@
+/* =========================================
+   Appearance / dark mode
+   ========================================= */
+
 /* Hide dark/light mode toggle */
-.VPSwitchAppearance {
+.VPSwitchAppearance,
+.VPNavBarAppearance,
+.VPNavScreenAppearance {
   display: none !important;
 }
 
-/* Hide the hover anchor link on headings */
+
+/* =========================================
+   Hide the hover anchor link on headings
+   ========================================= */
+
 .vp-doc .header-anchor {
   display: none !important;
 }
 
-/* Wikipedia-style image infobox */
+
+/* =========================================
+   Wikipedia-style image infobox
+   ========================================= */
+
 .wiki-img {
   float: right;
   width: 300px;
@@ -27,22 +41,35 @@
   color: var(--vp-c-text-2);
 }
 
-/* Section headings always begin below the image */
+
+/* =========================================
+   Section headings always begin below image
+   ========================================= */
+
 .vp-doc h2 {
   clear: both;
 }
 
-/* Mobile */
+
+/* =========================================
+   Mobile
+   ========================================= */
+
 @media (max-width: 768px) {
+
   .wiki-img {
     float: none;
     width: 100%;
     margin: 1.5rem 0;
   }
+
 }
 
 
-/* H2 starts below the Wikipedia-style image */
+/* =========================================
+   H2 starts below the Wikipedia-style image
+   ========================================= */
+
 .vp-doc h2 {
   clear: both;
 }
@@ -77,8 +104,12 @@
 }
 
 
-/* Desktop: normal H2 */
+/* =========================================
+   Desktop: normal H2
+   ========================================= */
+
 @media (min-width: 769px) {
+
   .mobile-accordion-heading {
     cursor: default;
   }
@@ -86,14 +117,21 @@
   .mobile-accordion-heading::after {
     display: none;
   }
+
 }
-/* hide hamberger */
+
+
+/* =========================================
+   Mobile navigation
+   ========================================= */
+
+/* Hide appearance/theme controls from mobile navigation */
 @media (max-width: 768px) {
-  .VPNavBarMenu {
+
+  .VPNavBarAppearance,
+  .VPNavScreenAppearance,
+  .VPSwitchAppearance {
     display: none !important;
   }
 
-  .VPNavBarAppearance {
-    display: none !important;
-  }
 }
