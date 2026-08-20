@@ -6,7 +6,6 @@ export default {
 
   enhanceApp({ router }) {
     const setupMobileAccordions = () => {
-      // Only activate on mobile
       if (window.innerWidth > 768) return
 
       const content = document.querySelector('.vp-doc')
@@ -15,7 +14,6 @@ export default {
       const headings = Array.from(content.querySelectorAll('h2'))
 
       headings.forEach((heading) => {
-        // Don't initialize twice
         if (heading.dataset.accordionReady) return
 
         const elements = []
@@ -32,20 +30,16 @@ export default {
         heading.classList.add('mobile-accordion-heading')
         heading.classList.add('is-collapsed')
 
-        // Create wrapper
         const wrapper = document.createElement('div')
         wrapper.className = 'mobile-accordion-content'
         wrapper.hidden = true
 
-        // Insert wrapper before the first element
         heading.parentNode.insertBefore(wrapper, elements[0])
 
-        // Move elements into wrapper
         elements.forEach((element) => {
           wrapper.appendChild(element)
         })
 
-        // Toggle
         heading.addEventListener('click', () => {
           const isOpen = !wrapper.hidden
 
@@ -56,11 +50,9 @@ export default {
       })
     }
 
-    // Initial page
     if (typeof window !== 'undefined') {
       setTimeout(setupMobileAccordions, 0)
 
-      // VitePress client-side navigation
       router.onAfterRouteChanged = () => {
         setTimeout(setupMobileAccordions, 0)
       }
