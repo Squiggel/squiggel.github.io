@@ -146,6 +146,10 @@
   width: auto !important;
 }
 
+:root {
+  --vp-nav-height: 100px;
+}
+
 .VPNavBarMenu {
   display: none;
 }
