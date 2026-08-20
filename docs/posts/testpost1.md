@@ -1,7 +1,3 @@
----
-navbar: false
----
-
 # Title
 
 This is the introductory paragraph of your article. It sits outside any collapsible sections.
