@@ -1,6 +1,6 @@
 # Article title
 
-[Home](index.md)
+[Home](../index.md)
 
 [[index|home]]
 
