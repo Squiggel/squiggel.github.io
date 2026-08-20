@@ -144,3 +144,8 @@
 .VPNavBarMenu {
   display: none;
 }
+
+.VPNavBarMenu,
+.VPNavBarMenuButton {
+  display: none !important;
+}
