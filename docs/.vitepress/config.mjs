@@ -5,6 +5,7 @@ export default defineConfig({
   title: "My Blog",
   description: "A VitePress Site",
   themeConfig: {
+    appearance: false,
     docFooter: { prev: false, next: false },
     outline: { level: 'deep', label: 'Contents' }
   },
