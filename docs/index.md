@@ -1,4 +1,4 @@
-![Logo](../images/sitename_typographic.svg)
+![Logo](./images/sitename_typographic.svg)
 
 ### Featured articles
 
