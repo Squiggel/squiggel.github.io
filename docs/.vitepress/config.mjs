@@ -6,7 +6,8 @@ export default defineConfig({
   themeConfig: {
     logo: '/images/logo.svg',
     siteTitle: false,
-    appearance: 'light',
+    logo: '/images/logo.svg',
+    appearance: false,
     docFooter: { prev: false, next: false },
     outline: { level: 'deep', label: 'Contents' }
   },
