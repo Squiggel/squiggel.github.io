@@ -1,4 +1,9 @@
-/* Hide the hover anchor link on headings completely */
+/* Hide dark/light mode toggle */
+.VPSwitchAppearance {
+  display: none !important;
+}
+
+/* Hide the hover anchor link on headings */
 .vp-doc .header-anchor {
   display: none !important;
 }

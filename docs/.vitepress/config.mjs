@@ -2,8 +2,7 @@ import { defineConfig } from 'vitepress'
 import wikilinks from 'markdown-it-wikilinks'
 
 export default defineConfig({
-  title: "DOMAIN-TBD",
-  // description: "A VitePress Site",
+  title: "Know It All",
   themeConfig: {
     appearance: false,
     docFooter: { prev: false, next: false },
