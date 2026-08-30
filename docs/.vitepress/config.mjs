@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 import wikilinks from 'markdown-it-wikilinks'
 
 export default defineConfig({
+  title:"",
   appearance: 'light',
   themeConfig: {
     logo: '/images/dahu-logo.svg',
