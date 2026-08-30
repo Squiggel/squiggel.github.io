@@ -4,7 +4,7 @@ import wikilinks from 'markdown-it-wikilinks'
 export default defineConfig({
   appearance: 'light',
   themeConfig: {
-    logo: '/images/logo.svg',
+    logo: '/images/dahu-logo.svg',
     nav: [],
     docFooter: { prev: false, next: false },
     outline: { level: 'deep', label: 'Contents' }
