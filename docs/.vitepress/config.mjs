@@ -2,7 +2,6 @@ import { defineConfig } from 'vitepress'
 import wikilinks from 'markdown-it-wikilinks'
 
 export default defineConfig({
-  title: "Know It All",
   appearance: 'light',
   themeConfig: {
     logo: '/images/logo.svg',
