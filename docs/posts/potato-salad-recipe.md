@@ -8,7 +8,7 @@ date: 2026-08-31
 
 <figure class="wiki-img">
   <img src="/public/images/potato-salad-recipe-1.jpeg" alt="Potato salad as prepared">
-  <figcaption>If you don't want to eat this, I am concerned for you mental wellbeing.</figcaption>
+  <figcaption>If you don't want to eat this, I am concerned for your mental wellbeing.</figcaption>
 </figure>
 
 Potato salad is arguably (I argue!) one of the finest dishes in modern cuisine. Its satiating, simple, and oh-so-carby!
