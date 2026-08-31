@@ -194,3 +194,10 @@
 .post-byline time {
   color: var(--vp-c-text-3);
 }
+
+
+.VPNavBarTitle .title {
+  white-space: normal;
+  line-height: 1.2;
+  max-width: 250px;
+}
