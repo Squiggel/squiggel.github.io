@@ -2,6 +2,5 @@
 title: Home
 ---
 
-### Featured articles
-
-- [[template-article.md]]
+### How to
+- [[potato-salad-recipe.md|Make a potato salad]]
