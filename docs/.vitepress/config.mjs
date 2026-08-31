@@ -8,7 +8,8 @@ export default defineConfig({
     logo: '/images/dahu-logo.svg',
     nav: [],
     docFooter: { prev: false, next: false },
-    outline: { level: 'deep', label: 'Contents' }
+    outline: { level: 'deep', label: 'Contents' },
+    lastUpdated: true
   },
   
   markdown: {
