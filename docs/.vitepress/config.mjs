@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import wikilinks from 'markdown-it-wikilinks'
 
 export default defineConfig({
-  title: "Dahu! An eclectic collection for no one in particular.",
+  title: "An eclectic collection for no one in particular.",
   appearance: 'light',
   themeConfig: {
     logo: '/images/dahu-logo.svg',
