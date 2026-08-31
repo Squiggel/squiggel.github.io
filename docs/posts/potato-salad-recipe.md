@@ -20,8 +20,8 @@ Potato salad is arguably (I argue!) one of the finest dishes in modern cuisine. 
 | Dill | 1 Bunch |
 | Baby potatoes | 750 g |
 | Lemon juice | 1 Squeeze |
-| Mayonnaise | 59.15 ml |
-| Dijon mustard | 9.86 ml |
+| Mayonnaise | 60 ml |
+| Dijon mustard | 10 ml |
 
 ## Steps
 1. Chop and boil potatoes
@@ -29,7 +29,7 @@ Potato salad is arguably (I argue!) one of the finest dishes in modern cuisine. 
 3. Mix it all together
 
 ## Nutrition
-Guestimated at:
+For 1/3 of the quantity, I guestimate at:
 
 | Nutrient | Quantity |
 | ----- | -------- |
