@@ -1,8 +1,10 @@
 import DefaultTheme from 'vitepress/theme'
+import DocLayout from './DocLayout.vue'
 import './style.css'
 
 export default {
   extends: DefaultTheme,
+  Layout: DocLayout,
 
   enhanceApp({ router }) {
     const setupMobileAccordions = () => {
@@ -53,6 +55,7 @@ export default {
     if (typeof window !== 'undefined') {
       document.documentElement.classList.remove('dark')
       document.documentElement.classList.add('light')
+
       setTimeout(setupMobileAccordions, 0)
 
       router.onAfterRouteChanged = () => {

@@ -173,3 +173,24 @@
 .VPNavBar {
   border-bottom: none !important;
 }
+
+/* =========================================
+   Post byline
+   ========================================= */
+
+.post-byline {
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+  color: var(--vp-c-text-2);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.post-byline-separator {
+  margin: 0 0.4rem;
+  color: var(--vp-c-text-3);
+}
+
+.post-byline time {
+  color: var(--vp-c-text-3);
+}
