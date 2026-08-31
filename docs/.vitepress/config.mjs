@@ -9,7 +9,6 @@ export default defineConfig({
     nav: [],
     docFooter: { prev: false, next: false },
     outline: { level: 'deep', label: 'Contents' },
-    lastUpdated: true
   },
   
   markdown: {
