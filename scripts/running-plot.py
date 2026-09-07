@@ -7,6 +7,7 @@ import logging
 from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 from garminconnect import (
     Garmin,
     GarminConnectAuthenticationError,
@@ -151,9 +152,18 @@ def calculate_run_quality(laps_df: pd.DataFrame) -> pd.DataFrame:
     return run_summary.sort_values("run_date").reset_index(drop=True)
 
 
+
+
 def generate_and_save_plot(run_summary: pd.DataFrame, output_path: Path):
-    """Generates and saves a time-series line plot of run quality by date."""
-    clean_df = run_summary.dropna(subset=["run_date", "quality"])
+    """Generates and saves a time-series plot of run quality with rolling averages,
+
+    a linear regression trend line, and a legend.
+    """
+    clean_df = (
+        run_summary.dropna(subset=["run_date", "quality"])
+        .sort_values("run_date")
+        .copy()
+    )
 
     if clean_df.empty:
         logger.warning("No valid data available to generate plot.")
@@ -161,13 +171,74 @@ def generate_and_save_plot(run_summary: pd.DataFrame, output_path: Path):
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    plt.figure(figsize=(10, 6))
-    plt.plot(clean_df["run_date"], clean_df["quality"], marker="o", linestyle="-", color="#2b5c8f")
+    # --- 1. Calculate Rolling Averages ---
+    # Using time-based windows ('7D' and '30D') on date-indexed data
+    df_indexed = clean_df.set_index("run_date")
+    clean_df["rolling_7d"] = df_indexed.rolling("7D")["quality"].mean().values
+    clean_df["rolling_30d"] = (
+        df_indexed.rolling("30D")["quality"].mean().values
+    )
 
-    plt.title("Trail Run Quality Over Time")
-    plt.xlabel("Run Date")
-    plt.ylabel("Quality Index (Total Difficulty / Total Effort)")
+    # --- 2. Calculate Linear Regression Trend Line ---
+    # Convert dates to ordinal numbers for linear regression fitting
+    x_ordinal = clean_df["run_date"].map(pd.Timestamp.toordinal)
+    y_quality = clean_df["quality"]
+
+    # Calculate slope and intercept using numpy polyfit
+    slope, intercept = np.polyfit(x_ordinal, y_quality, 1)
+    linear_trend = slope * x_ordinal + intercept
+
+    # --- 3. Plotting ---
+    plt.figure(figsize=(12, 6))
+
+    # Scatter plot of raw quality points
+    plt.scatter(
+        clean_df["run_date"],
+        clean_df["quality"],
+        color="#2b5c8f",
+        alpha=0.5,
+        label="Run Quality (Raw)",
+        zorder=2,
+    )
+
+    # 7-Day Rolling Average
+    plt.plot(
+        clean_df["run_date"],
+        clean_df["rolling_7d"],
+        color="#f39c12",
+        linewidth=2,
+        label="7-Day Rolling Avg",
+        zorder=3,
+    )
+
+    # 30-Day Rolling Average
+    plt.plot(
+        clean_df["run_date"],
+        clean_df["rolling_30d"],
+        color="#27ae60",
+        linewidth=2,
+        label="30-Day Rolling Avg",
+        zorder=4,
+    )
+
+    # Linear Regression Line
+    plt.plot(
+        clean_df["run_date"],
+        linear_trend,
+        color="#c0392b",
+        linestyle="--",
+        linewidth=2,
+        label="Linear Trend",
+        zorder=5,
+    )
+
+    # Aesthetics & Legend
+    plt.title("Trail Run Quality Over Time", fontsize=14, fontweight="bold")
+    plt.xlabel("Run Date", fontsize=11)
+    plt.ylabel("Dahu Quality", fontsize=11)
     plt.grid(True, linestyle="--", alpha=0.5)
+    plt.legend(loc="upper left", frameon=True)
+
     plt.gcf().autofmt_xdate()
     plt.tight_layout()
 
