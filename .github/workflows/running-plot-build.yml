@@ -31,7 +31,7 @@ jobs:
         env:
           GARMIN_EMAIL: ${{ secrets.GARMIN_EMAIL }}
           GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
-        run: python your_script_name.py
+        run: python scripts/running-plot.py
 
       - name: Commit and Push Plot
         run: |
