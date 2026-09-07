@@ -7,15 +7,14 @@ date: 2026-09-07
 # Dahu Quality
 An imperfect but systemised and simple way to measure running improvement in a single number.
 
+## What is Dahu Quality for?
+Feedback is widely recognised as being a key component in the process of improvement in any domain. If you want to *systematically* get better at something, you **must** understand how efforts relate to progress. Without this, the improvement process itself will remain dominated by the random influences and events that can both help and hinder improvement across different time scales.
+Getting quality feedback is hard. People aren't honest about how good you are, and correctly evaluating your own abilities is a vigorously shaken can of worms. I think many people recognise this dilemma, hence the global (and growing) obsession with Strava, Garmin and alike. These tools provide many of the core components for a deep analysis of your improvement in your sports domain (running for me). I have personally found them to be very helpful to corroborate or contradict my personal perceptions of my progress.
+What is missing for those of us who value an empirical understanding of ourselves is a single metric that tells us how well we did in a single sporting event.
 <figure class="wiki-img">
   <img src="/public/images/running-plot-auto.png" alt="Auto updating Dahu Quality plot">
   <figcaption>Subset of my runs where data was recorded correctly. Temperature only just started being recorded. This plot updates at midnight.</figcaption>
 </figure>
-
-## What is Dahu Quality for?
-Feedback is widely recognised as being a key component in the process of improvement in any domain. If you want to *systematically* get better at something, you **must** understand how efforts relate to progress. Without this, the improvement process itself will remain dominated by the random influences and events that can both help and hinder improvement across different time scales. 
-Getting quality feedback is hard. People aren't honest about how good you are, and correctly evaluating your own abilities is a vigorously shaken can of worms. I think many people recognise this dilemma, hence the global (and growing) obsession with Strava, Garmin and alike. These tools provide many of the core components for a deep analysis of your improvement in your sports domain (running for me). I have personally found them to be very helpful to corroborate or contradict my personal perceptions of my progress.
-What is missing for those of us who value an empirical understanding of ourselves is a single metric that tells us how well we did in a single sporting event.
 The use of a single metric to represent multiple factors in a sporting event may seem to some like a fetishisation of the data driven improvement process. Such an opinion ignores the astonishing skill of the average person to interpret a panel of metrics in an incredibly inconsistent way from day to day. I know I'm guilty, however hard I try, and I bet you are too.
 A single pre-defined formula that brings together the main metrics available, and says how well you ran on a given day, is closed to interpretation as long as you agree that its conclusions are directionally correct. This is what the Dahu Quality aims to achieve.
 
