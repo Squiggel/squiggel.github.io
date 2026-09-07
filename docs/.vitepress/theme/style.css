@@ -20,58 +20,27 @@
 
 
 /* =========================================
-   Wikipedia-style image infobox
+   Full-width article image
    ========================================= */
 
 .wiki-img {
-  float: right;
-  width: 300px;
-  margin: 0 0 1rem 1.5rem;
-  padding: 8px;
-  border: 1px solid var(--vp-c-divider);
-  background-color: var(--vp-c-bg-soft);
-  border-radius: 4px;
+  width: 100%;
+  margin: 1.5rem 0;
   box-sizing: border-box;
 }
 
+.wiki-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .wiki-img figcaption {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   text-align: center;
-  margin-top: 8px;
-  color: var(--vp-c-text-2);
-}
-
-
-/* =========================================
-   Section headings always begin below image
-   ========================================= */
-
-.vp-doc h2 {
-  clear: both;
-}
-
-
-/* =========================================
-   Mobile
-   ========================================= */
-
-@media (max-width: 768px) {
-
-  .wiki-img {
-    float: none;
-    width: 100%;
-    margin: 1.5rem 0;
-  }
-
-}
-
-
-/* =========================================
-   H2 starts below the Wikipedia-style image
-   ========================================= */
-
-.vp-doc h2 {
-  clear: both;
+  margin-top: 4px;
+  color: var(--vp-c-text-3);
+  opacity: 0.8;
 }
 
 
@@ -122,57 +91,38 @@
 
 
 /* =========================================
-   Mobile navigation
+   Navigation adjustments
    ========================================= */
-
-/* Hide appearance/theme controls from mobile navigation */
-@media (max-width: 768px) {
-
-  .VPNavBarAppearance,
-  .VPNavScreenAppearance,
-  .VPSwitchAppearance {
-    display: none !important;
-  }
-
-}
-
-.VPNavBarTitle .logo {
-  height: 85px !important;
-  width: auto !important;
-}
-
-.VPNavBarTitle img {
-  height: 85px !important;
-  width: auto !important;
-}
 
 :root {
   --vp-nav-height: 100px;
 }
 
-.VPNavBarMenu {
-  display: none;
-}
-
-.VPNavBarMenu,
-.VPNavBarMenuButton {
-  display: none !important;
-}
-
-.VPNavBarHamburger {
-  display: none !important;
-}
-
 .VPNavBarTitle .logo,
 .VPNavBarTitle img {
+  height: 85px !important;
+  width: auto !important;
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
 }
 
+.VPNavBarTitle .title {
+  white-space: normal;
+  line-height: 1.2;
+  max-width: 250px;
+}
+
+.VPNavBarMenu,
+.VPNavBarMenuButton,
+.VPNavBarHamburger {
+  display: none !important;
+}
+
 .VPNavBar {
   border-bottom: none !important;
 }
+
 
 /* =========================================
    Post byline
@@ -193,11 +143,4 @@
 
 .post-byline time {
   color: var(--vp-c-text-3);
-}
-
-
-.VPNavBarTitle .title {
-  white-space: normal;
-  line-height: 1.2;
-  max-width: 250px;
 }
