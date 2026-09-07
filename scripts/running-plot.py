@@ -51,9 +51,9 @@ def initialize_garmin_client() -> Garmin:
 
 
 def get_combined_runs_dataset() -> pd.DataFrame:
-    """Fetches activity splits for all runs and extracts relevant lap metrics.
+    """Fetches activity splits for all runs and extracts relevant lap metrics,
 
-    Skipping activities missing required columns.
+    skipping activities missing required columns.
     """
     client = initialize_garmin_client()
 
@@ -72,7 +72,6 @@ def get_combined_runs_dataset() -> pd.DataFrame:
         start += limit
 
     all_laps = []
-    # Map Garmin API split keys to standardized pandas column names
     column_mapping = {
         "lapIndex": "lap_id",
         "avgGradeAdjustedSpeed": "grade_adjusted_speed",
@@ -110,7 +109,6 @@ def get_combined_runs_dataset() -> pd.DataFrame:
             if splits_list:
                 df_laps = pd.DataFrame(splits_list)
 
-                # Check if required raw columns are present
                 existing_cols = [
                     col
                     for col in column_mapping.keys()
@@ -118,7 +116,7 @@ def get_combined_runs_dataset() -> pd.DataFrame:
                 ]
                 mapped_cols = [column_mapping[col] for col in existing_cols]
 
-                # Skip activity if it doesn't contain all required quality metrics
+                # Skip activity if it lacks required metrics
                 if not all(req in mapped_cols for req in required_keys):
                     continue
 
@@ -142,7 +140,7 @@ def get_combined_runs_dataset() -> pd.DataFrame:
 def calculate_run_quality(laps_df: pd.DataFrame) -> pd.DataFrame:
     """Computes lap difficulty, effort, and total run distance, aggregating
 
-    results to calculate an overall 'quality' score per run.
+    results to calculate an overall 'quality' score per run (2026 onwards).
     """
     if laps_df.empty:
         return pd.DataFrame()
@@ -187,11 +185,13 @@ def calculate_run_quality(laps_df: pd.DataFrame) -> pd.DataFrame:
         run_summary["total_difficulty"] / run_summary["total_effort"]
     )
 
-    # Convert distance from meters to kilometers (Garmin standard unit is meters)
+    # Convert distance from meters to kilometers
     run_summary["total_distance_km"] = run_summary["total_distance_m"] / 1000.0
 
-    # Parse and sort chronologically by date
+    # Parse date and filter strictly from Jan 1, 2026 onwards
     run_summary["run_date"] = pd.to_datetime(run_summary["startTimeLocal"])
+    run_summary = run_summary[run_summary["run_date"] >= "2026-01-01"]
+
     return run_summary.sort_values("run_date").reset_index(drop=True)
 
 
@@ -207,7 +207,7 @@ def generate_and_save_plot(run_summary: pd.DataFrame, output_path: Path):
     )
 
     if clean_df.empty:
-        logger.warning("No valid data available to generate plot.")
+        logger.warning("No valid 2026 data available to generate plot.")
         return
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -230,11 +230,11 @@ def generate_and_save_plot(run_summary: pd.DataFrame, output_path: Path):
         subset = clean_df[condition(clean_df["total_distance_km"])].copy()
 
         if not subset.empty:
-            # Calculate 30-day rolling average for this specific subplot subset
+            # 30-day rolling average for this subplot
             subset_indexed = subset.set_index("run_date")
             rolling_30d = subset_indexed.rolling("30D")["quality"].mean()
 
-            # Scatter plot of raw quality points
+            # Scatter plot
             ax.scatter(
                 subset["run_date"],
                 subset["quality"],
@@ -272,7 +272,7 @@ def generate_and_save_plot(run_summary: pd.DataFrame, output_path: Path):
 
     axes[-1].set_xlabel("Run Date", fontsize=11)
     fig.suptitle(
-        "Run Quality Over Time by Distance Category",
+        "Run Quality Over Time by Distance Category (2026+)",
         fontsize=14,
         fontweight="bold",
         y=0.995,
@@ -296,6 +296,6 @@ if __name__ == "__main__":
             plot_output = Path("docs/public/images/running-plot-auto.png")
             generate_and_save_plot(quality_df, plot_output)
         else:
-            logger.warning("Could not compute run quality from lap data.")
+            logger.warning("Could not compute run quality from 2026 lap data.")
     else:
         logger.warning("No running data found.")
