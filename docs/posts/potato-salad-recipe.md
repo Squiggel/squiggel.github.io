@@ -7,36 +7,7 @@ date: 2026-08-31
 # Potato salad recipe
 
 <figure class="wiki-img">
-  <img src="/public/images/potato-salad-recipe-1.jpeg" alt="Potato salad as prepared">
-  <figcaption>If you don't want to eat this, I am concerned for your mental wellbeing.</figcaption>
+  <img src="/public/images/potato-salad-1.jpeg" alt="Potato salad logical recipe">
 </figure>
-
-Potato salad is arguably (I argue!) one of the finest dishes in modern cuisine. Its satiating, simple, and oh-so-carby!
-
-## Ingredients
-
-| Ingredient | Quantity |
-| ---------- | -------- |
-| Dill | 1 Bunch |
-| Baby potatoes | 750 g |
-| Lemon juice | 1 Squeeze |
-| Mayonnaise | 60 ml |
-| Dijon mustard | 10 ml |
-
-## Steps
-1. Chop and boil potatoes
-2. Chop dill and mix dressing 
-3. Mix it all together
-
-## Nutrition
-For 1/3 of the quantity, I guestimate at:
-
-| Nutrient | Quantity |
-| ----- | -------- |
-| Calories | 450 kcal |
-| Protein | 7 g |
-| Carbs | 45 g |
-| Fat | 28 g |
-
 
 
