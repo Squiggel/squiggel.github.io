@@ -2,10 +2,5 @@
 title: Home
 ---
 
-### Data stuff
-- [[dahu-quality.md|Measuring running improvement]]
-
-### How to
-- [[potato-salad-recipe.md|Make a potato salad]]
-
-
+- [[alpha-algo-visual.md|Visual explanation of the Alpha process discovery algorithm]]
+- [[potato-salad-recipe.md|Potato salad recipe]]
