@@ -92,5 +92,5 @@ Using the sets of start and end activities, we can finally link these to the sta
 </figure>
 
 ## References
-- The specific example and simple understanding of the algorithm can be found in [Study Conquest - Alpha Algorithm (Process Discovery Method](https://www.youtube.com/watch?v=nOTehxTiFFU)
+- The specific example and simple understanding of the algorithm can be found in [Study Conquest - Alpha Algorithm (Process Discovery Method)](https://www.youtube.com/watch?v=nOTehxTiFFU)
 - Deeper mathematical understanding can be found in [Wil M. P. van der Aalst - Process Mining Handbook](https://doi.org/10.1007/978-3-031-08848-3)
